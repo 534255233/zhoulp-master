@@ -19,10 +19,8 @@
 	<jstl.version>1.2</jstl.version>
 	<!-- <tomcat.servlet.version>7.0.53</tomcat.servlet.version> -->
 	<tomcat.servlet.version>8.0.21</tomcat.servlet.version>
-	<!-- <mongodb.version>2.12.0</mongodb.version> -->
-	<!-- <mongodb.version>3.0.1</mongodb.version> -->
-	<mongodb.version>3.0.3</mongodb.version>
-	<redis.client.version>2.5.1</redis.client.version>
+	<mongodb.version>3.2.1</mongodb.version>
+	<redis.client.version>2.8.0</redis.client.version>
 	<json.version>20140107</json.version>
 	<poi.version>3.10.1</poi.version>
   </properties>
@@ -35,17 +33,17 @@
 	  		<artifactId>module-base-util</artifactId>
 	  		<version>0.0.1</version>
 	  	</dependency>
-  		<!-- <dependency>
+  		<dependency>
 	  		<groupId>com.zlp</groupId>
-	  		<artifactId>exception-module</artifactId>
+	  		<artifactId>module-base-exception</artifactId>
 	  		<version>0.0.1</version>
 	  	</dependency>
   		<dependency>
 	  		<groupId>com.zlp</groupId>
-	  		<artifactId>logger-module</artifactId>
+	  		<artifactId>module-base-log</artifactId>
 	  		<version>0.0.1</version>
 	  	</dependency>
-	  	<dependency>
+	  	<!-- <dependency>
 	  		<groupId>com.zlp</groupId>
 	  		<artifactId>email-module</artifactId>
 	  		<version>0.0.1</version>
