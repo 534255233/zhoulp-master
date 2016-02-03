@@ -9,15 +9,15 @@
   
   <properties>
   	<project.encoding>UTF-8</project.encoding>
+	<spring.version>4.2.3.RELEASE</spring.version>
     <commons-logging.version>1.2</commons-logging.version>
     <commons-io.version>2.4</commons-io.version>
     <commons-fileupload.version>1.3.1</commons-fileupload.version>
 	<slf4j-api.version>1.7.7</slf4j-api.version>
-	<spring.version>4.0.3.RELEASE</spring.version>
-	<jackson.version>2.3.3</jackson.version>
-	<aspectjweaver.version>1.8.0</aspectjweaver.version>
+	<jackson.version>2.6.3</jackson.version>
+	<aspectjweaver.version>1.8.7</aspectjweaver.version>
+	<thymeleaf.version>2.1.4.RELEASE</thymeleaf.version>
 	<jstl.version>1.2</jstl.version>
-	<!-- <tomcat.servlet.version>7.0.53</tomcat.servlet.version> -->
 	<tomcat.servlet.version>8.0.21</tomcat.servlet.version>
 	<mongodb.version>3.2.1</mongodb.version>
 	<redis.client.version>2.8.0</redis.client.version>
@@ -43,99 +43,7 @@
 	  		<artifactId>module-base-log</artifactId>
 	  		<version>0.0.1</version>
 	  	</dependency>
-	  	<!-- <dependency>
-	  		<groupId>com.zlp</groupId>
-	  		<artifactId>email-module</artifactId>
-	  		<version>0.0.1</version>
-	  	</dependency>
-  		<dependency>
-	  		<groupId>com.zlp</groupId>
-	  		<artifactId>cxf-module</artifactId>
-	  		<version>0.0.1</version>
-	  	</dependency>
-  		<dependency>
-	  		<groupId>com.zlp</groupId>
-	  		<artifactId>dao-module</artifactId>
-	  		<version>0.0.1</version>
-	  	</dependency>
-  		<dependency>
-	  		<groupId>com.zlp</groupId>
-	  		<artifactId>abstract-module</artifactId>
-	  		<version>0.0.1</version>
-	  	</dependency> -->
-  		<dependency>
-	        <groupId>junit</groupId>
-	        <artifactId>junit</artifactId>
-	        <version>4.11</version>
-	        <scope>test</scope>
-	    </dependency>
-	  	<!-- database -->
-	    <dependency>
-			<groupId>org.mongodb</groupId>
-			<artifactId>mongo-java-driver</artifactId>
-			<version>${mongodb.version}</version>
-		</dependency>
-	    <dependency>
-			<groupId>org.mongodb</groupId>
-			<artifactId>mongodb-driver-async</artifactId>
-			<version>${mongodb.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>redis.clients</groupId>
-			<artifactId>jedis</artifactId>
-			<version>${redis.client.version}</version>
-		</dependency>
-		<!-- tomcat application server -->
-	    <dependency>
-			<groupId>org.apache.tomcat</groupId>
-			<artifactId>tomcat-servlet-api</artifactId>
-			<version>${tomcat.servlet.version}</version>
-			<!-- <scope>provided</scope> -->
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<version>3.1.0</version>
-			<!-- <scope>provided</scope> -->
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
-			<!-- <scope>provided</scope> -->
-		</dependency>
-		<!-- third logging -->
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-			<version>${commons-logging.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>${commons-io.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>commons-fileupload</groupId>
-			<artifactId>commons-fileupload</artifactId>
-			<version>${commons-fileupload.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-			<version>${slf4j-api.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>${slf4j-api.version}</version>
-		</dependency>
-		<!-- <dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>jcl-over-slf4j</artifactId>
-			<version>${slf4j-api.version}</version>
-		</dependency> -->
-	    <!-- spring framework -->
+	  	<!-- spring framework -->
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
@@ -172,11 +80,13 @@
 			<version>${spring.version}</version>
 			<scope>test</scope>
 		</dependency>
+		
 		<dependency>
-		    <groupId>javax.inject</groupId>
-		    <artifactId>javax.inject</artifactId>
-		    <version>1</version>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjweaver</artifactId>
+			<version>${aspectjweaver.version}</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
@@ -187,66 +97,54 @@
 			<artifactId>jackson-annotations</artifactId>
 			<version>${jackson.version}</version>
 		</dependency>
+		
 		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjweaver</artifactId>
-			<version>${aspectjweaver.version}</version>
+			<groupId>org.thymeleaf</groupId>
+			<artifactId>thymeleaf</artifactId>
+			<version>${thymeleaf.version}</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>org.thymeleaf</groupId>
+			<artifactId>thymeleaf-spring4</artifactId>
+			<version>${thymeleaf.version}</version>
+		</dependency>
+		
+		<!-- <dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+		</dependency> -->
+		
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-			<version>${jstl.version}</version>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>${mongodb.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>org.json</groupId>
-			<artifactId>json</artifactId>
-			<version>${json.version}</version>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongodb-driver-async</artifactId>
+			<version>${mongodb.version}</version>
 		</dependency>
+		
 		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi</artifactId>
-			<version>${poi.version}</version>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>${redis.client.version}</version>
 		</dependency>
+		
 		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>${poi.version}</version>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-frontend-jaxws</artifactId>
-			<version>3.0.4</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-frontend-jaxrs</artifactId>
-			<version>3.0.4</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-rs-extension-providers</artifactId>
-			<version>3.0.4</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.cxf</groupId>
-			<artifactId>cxf-rt-transports-http</artifactId>
-			<version>3.0.4</version>
-		</dependency>
-		<dependency>
-			<groupId>org.apache.httpcomponents</groupId>
-			<artifactId>httpclient</artifactId>
-			<version>4.4.1</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>mail</artifactId>
-			<version>1.4.7</version>
-		</dependency>
-		<!-- <dependency>
-			<groupId>javax.mail</groupId>
-			<artifactId>javax.mail-api</artifactId>
-			<version>1.5.3</version>
-		</dependency> -->
+
   	</dependencies>
   </dependencyManagement>
   
