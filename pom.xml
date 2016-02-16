@@ -43,6 +43,11 @@
 	  		<artifactId>module-base-log</artifactId>
 	  		<version>0.0.1</version>
 	  	</dependency>
+  		<dependency>
+	  		<groupId>com.zlp</groupId>
+	  		<artifactId>module-base-entity</artifactId>
+	  		<version>0.0.1</version>
+	  	</dependency>
 	  	<!-- spring framework -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -96,6 +101,12 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-annotations</artifactId>
 			<version>${jackson.version}</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>javax.inject</groupId>
+		    <artifactId>javax.inject</artifactId>
+		    <version>1</version>
 		</dependency>
 		
 		<dependency>
