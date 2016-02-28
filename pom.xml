@@ -21,7 +21,7 @@
 	<tomcat.servlet.version>8.0.21</tomcat.servlet.version>
 	<mongodb.version>3.2.1</mongodb.version>
 	<redis.client.version>2.8.0</redis.client.version>
-	<json.version>20140107</json.version>
+	<!-- <json.version>20140107</json.version> -->
 	<poi.version>3.10.1</poi.version>
   </properties>
   
